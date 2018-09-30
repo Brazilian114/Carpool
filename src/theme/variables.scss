@@ -35,12 +35,11 @@ $app-direction: ltr;
 
 $colors: (
   primary:    #488aff,
-  secondary:  rgba(0, 62, 124, 0.86),
-  danger:     rgb(255, 255, 255),
+  secondary:  #32db64,
+  danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222
 );
-
 
 
 // App iOS Variables
@@ -87,12 +86,3 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
-
-@font-face{
-  font-family:"test";
-  src: url('../assets/fonts/test7.woff2');
-}
-$font-family-base:"test";
-h1{
-  font-family: "test";
-}

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ListPage } from '../list/list';
+import { IonicPage, NavController, NavParams,App  } from 'ionic-angular';
+import { HomePage } from '../home/home';
+import { QueuePage } from '../queue/queue';
+import { HistoryPage } from '../history/history';
 import { ProfilePage } from '../profile/profile';
-import { SettingPage } from '../setting/setting';
-
 /**
  * Generated class for the MainPage page.
  *
@@ -17,20 +17,30 @@ import { SettingPage } from '../setting/setting';
   templateUrl: 'main.html',
 })
 export class MainPage {
-  tab1 = ListPage;
-  tab2 = SettingPage;
-  tab3 = ProfilePage;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public userDetails : any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,public app : App) {
+                          const data = JSON.parse(localStorage.getItem('userData'));
+                          this.userDetails = data.userData; 
   }
-  
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MainPage');
   }
-  
-  
-  
- 
-
+  queuePage(){
+    this.navCtrl.push(QueuePage);
+            
+           
+ }
+  historyPage(){
+  this.navCtrl.push(HistoryPage);
+          
+         
+}
+  profilePage(){
+  this.navCtrl.push(ProfilePage);
+          
+         
+}
 }

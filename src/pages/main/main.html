@@ -6,36 +6,52 @@
 -->
 <ion-header>
 
-  
+  <ion-navbar>
+    <ion-title>main</ion-title>
+  </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding id="tab">
- 
+<ion-content padding id="grid">
+<ion-item ></ion-item>
 
+<ion-item>
+  <ion-label fixed>Username</ion-label>
+  <ion-input type="text" value="{{userDetails.username}}"></ion-input>
+</ion-item>
 
-  
-  
-    <ion-tabs color="danger">
-        <ion-tab tabIcon="home" [root]="tab1"></ion-tab>
-        <ion-tab tabIcon="paper" [root]="tab2"></ion-tab>
-        <ion-tab tabIcon="person" [root]="tab3"></ion-tab>
-       
-        
-      </ion-tabs>
+  <ion-grid class="mygrid">
+      <ion-row>
+
+          <ion-col>
+            <button  ion-button block (click)="queuePage()">จองคิว</button>
+          </ion-col>
+         
+          
+        </ion-row>
+    <ion-row>
+
+      <ion-col class="cols">
+        <div class="div"(click)="profilePage()">
+
+        <ion-icon large name="contact"  class="icon"></ion-icon>
+        <h3>ข้อมูลส่วนตัว</h3>
+      </div>
+
+    </ion-col>
+    <ion-col class="cols">
+        <div class="div"(click)="historyPage()" >
+
+        <ion-icon large name="contact" class="icon" item-start></ion-icon>
+        <h3>ข้อมูลส่วนตัว</h3>
+      </div>
+
+    </ion-col>
+    </ion-row>
+    
+    
+  </ion-grid>
 
 </ion-content>
-
-
-
-    
-
-    
-    
-      
-
-
-
-
 

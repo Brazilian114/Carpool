@@ -1,13 +1,11 @@
 import { Component,ViewChild} from '@angular/core';
 import { NavController,ToastController,AlertController,ViewController,LoadingController} from 'ionic-angular';
-import { RegisPage } from '../regis/regis';
+import { RegisterPage } from '../register/register';
 import { MainPage } from '../main/main';
-import { ProfilePage } from '../profile/profile';
-import { ContentPage } from '../content/content';
-import { ListPage } from '../list/list';
+
 import { LoginProvider } from '../../providers/login/login';
 import { Storage } from '@ionic/storage';
-import { AboutPage } from '../about/about';
+
 
 //import{ AngularFireDatabase} from 'angularfire2/database';
 
@@ -25,17 +23,12 @@ export class HomePage {
   resposeData : any;
   userData = {"username":"","password":""};
 
-  data: any;
-  public items : any = [];
 
 
  constructor(private loading : LoadingController,private viewCtrl: ViewController, public http:Http ,public navCtrl: NavController,private toastCtrl:ToastController,
   private alert:AlertController,private auth:LoginProvider )  {
 
-                    this.data = {};
-                    this.data.username = "";
-                    this.data.password = "";
-
+                   
   }
 
   ionViewDidLoad() {
@@ -99,7 +92,7 @@ export class HomePage {
 
 
   click(){
-     this.navCtrl.push(RegisPage);
+     this.navCtrl.push(RegisterPage);
 
 
   }

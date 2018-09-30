@@ -10,7 +10,7 @@ header('Access-Control-Allow-Methods: GET, POST');
          $postdata = file_get_contents("php://input");
         if(isset($postdata)){
                 $request = json_decode($postdata);
-                $postData['name'] = $request->name;
+                $postData['email'] = $request->email;
                 $postData['username']= $request->username;
                 echo json_encode($postData);
                 exit();
