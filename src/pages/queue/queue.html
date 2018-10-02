@@ -1,13 +1,13 @@
 <ion-header>
 
-    <ion-navbar color="danger">
+    <ion-navbar>
       <ion-title>เพิ่มเส้นทาง</ion-title>
     </ion-navbar>
   
   </ion-header>
   
   
-  <ion-content class="outer-content" padding id="detail">
+  <ion-content class="outer-content" padding id="content">
   
   
    
@@ -27,9 +27,9 @@
               <ion-icon name="person"></ion-icon>
             </ion-label>
             <ion-input   placeholder="ชื่อ-นามสกุล"
-                         
+                         value="{{userDetails.username}}"
                          type="text"
-                         [(ngModel)]="userPostData.username"></ion-input>
+                         ></ion-input>
                          
      </ion-item>
 
@@ -39,9 +39,9 @@
           <ion-input 
                     
                      placeholder="หมายเลขทะเบียนรถ"
-                     [(ngModel)]="userPostData.license" ></ion-input>
+                     value="{{userDetails.license}}" ></ion-input>
         </ion-item>
-        
+        <div class="row2">
         <ion-item >
             <ion-label>จังหวัดตามทะเบียนรถ</ion-label>
         <ion-select 
@@ -129,14 +129,14 @@
           
         </ion-select>
         </ion-item>
-
+</div>
         <ion-item>
 
             <ion-label> <ion-icon name="call"></ion-icon></ion-label>
           <ion-input 
                       
                      placeholder="เบอร์โทร"
-                     [(ngModel)]="userPostData.tel"></ion-input>
+                     value="{{userDetails.tel}}"></ion-input>
         </ion-item>
 
         <ion-item >
@@ -156,8 +156,8 @@
 
                 <ion-option value="08.00.00">08.00.00</ion-option>
                 <ion-option value="09.00.00">09.00.00</ion-option>
-                <ion-option value="09.00.00">09.00.00</ion-option>
-                <ion-option value="11.00.00">11.00.00"</ion-option>
+                <ion-option value="10.00.00">10.00.00</ion-option>
+                <ion-option value="11.00.00">11.00.00</ion-option>
                 <ion-option value="12.00.00">12.00.00</ion-option>
                 <ion-option value="13.00.00">13.00.00</ion-option>
                 <ion-option value="14.00.00">14.00.00</ion-option>

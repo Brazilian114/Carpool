@@ -3,11 +3,7 @@
     <ion-navbar>
       <ion-title>ข้อมูลส่วนตัว</ion-title>
 
-      <ion-buttons end>
-          <button ion-button icon-only >
-            <h4>บันทึก</h4>
-          </button>
-        </ion-buttons>
+     
     </ion-navbar>
   
   </ion-header>
@@ -16,21 +12,17 @@
  
   
    
-      <!----
-  
+      
+  <ion-content padding id="content">
     
       <ion-list no-lines>
-         <ion-item>
-             
-         <input placeholder="search for location"  [(ngModel)]="userPostData.startt"autocorrect="off" autocapitalize="off" spellcheck="off" 
-          type="text" class="form-control" #search [formControl]="searchControl"(click)="map()">
-        </ion-item>
+         
 
         <ion-item>
             <ion-label> <ion-icon name="mail"></ion-icon></ion-label>
           <ion-input 
                       
-                      [(ngModel)]="userPostData.email"
+                      value="{{userDetails.email}}"
                       placeholder="อีเมล์"
                       type="text"></ion-input>
      </ion-item>
@@ -39,7 +31,7 @@
             <ion-label> <ion-icon name="person"></ion-icon></ion-label>
           <ion-input 
                       
-                      [(ngModel)]="userPostData.username"
+                      value="{{userDetails.username}}"
                       placeholder="ชื่อ-นามสกุล"
                       type="text"></ion-input>
      </ion-item>
@@ -47,15 +39,16 @@
             <ion-label> <ion-icon name="card"></ion-icon></ion-label>
           <ion-input 
                      
-          [(ngModel)]="userPostData.license"
+                     value="{{userDetails.license}}"
                      placeholder="หมายเลขทะเบียนรถ"></ion-input>
         </ion-item>
         
+        <div class="row2">
         <ion-item >
         <ion-label>จังหวัดตามทะเบียนรถ</ion-label>
-        <ion-select 
+        <ion-select  
          submitText="Okay" cancelText="Cancle">
-         
+        
           <ion-option value="กรุงเทพมหานคร">กรุงเทพมหานคร</ion-option>
           <ion-option value="กระบี่">กระบี่</ion-option>
           <ion-option value="กาญจนบุรี">กาญจนบุรี</ion-option>
@@ -137,51 +130,51 @@
           
         </ion-select>
         </ion-item>
-
+      </div>
         <ion-item>
 
             <ion-label> <ion-icon name="call"></ion-icon></ion-label>
           <ion-input 
-                     [(ngModel)]="userPostData.tel"
+                     value="{{userDetails.tel}}"
                      
                      placeholder="เบอร์โทร"></ion-input>
         </ion-item>
 
        
       
-         <button ion-button block (click)="profileUpdate()">ออกจากระบบ</button>
+         <button ion-button block color="secondary" (click)="profileUpdate()">บันทึก</button>
         
       </ion-list>        
        
-    -->
-    <ion-content class="outer-content" padding id="detail">
+    <!----
+    <ion-content class="outer-content" padding id="content">
 
     <form [formGroup]="form" (ngSubmit)="saveEntry()">
       <ion-list no-lines>
        
             <ion-item>
-                  <ion-label> <ion-icon name="pin"></ion-icon></ion-label>
+                  <ion-label> <ion-icon large name="mail"></ion-icon></ion-label>
                 <ion-input 
                             formControlName="email" 
                             [(ngModel)]="technologyemail" 
-                            placeholder="ต้นทาง"
+                            placeholder="อีเมล์"
                             type="text"></ion-input>
               </ion-item>
+              
               <ion-item>
-                  <ion-label> <ion-icon name="flag"></ion-icon></ion-label>
+                  <ion-label> <ion-icon name="person"></ion-icon></ion-label>
                 <ion-input 
                            formControlName="username" 
                            [(ngModel)]="technologyusername" 
-                           placeholder="ปลายทาง"
+                           placeholder="ชื่อ-นามสกุล"
                            type="text"></ion-input>
               </ion-item>
               
-              <ion-grid>
-                  <ion-row>
-                      <ion-col>
+            
+              
               <ion-item>
-                <ion-label><ion-icon name="calendar"></ion-icon></ion-label>
-                <ion-input placeholder="วันที่"
+                <ion-label><ion-icon name="card"></ion-icon></ion-label>
+                <ion-input placeholder="ทะเบียนรถ"
                               formControlName="license" 
                               [(ngModel)]="technologylicense"
                              
@@ -189,52 +182,42 @@
                               
                              ></ion-input>
               </ion-item>
-            </ion-col>
+            <div class="row2">
             
-                <ion-col>
+                
           
               <ion-item>
-                <ion-label><ion-icon name="clock"></ion-icon></ion-label>
+                <ion-label><ion-icon name="card"></ion-icon></ion-label>
                 <ion-input formControlName="province" 
-                               placeholder="เวลา"
+                               placeholder="จังหวัดตามทะเบียน"
                              [(ngModel)]="technologyprovince"
                                
                               type="text"
                              ></ion-input>
               </ion-item>
-            
-          </ion-col>
-      </ion-row>
-              </ion-grid>
-      
-              <ion-grid>
-                  <ion-row>
-                      <ion-col>
+            </div>
+          
+      <div>
+             
               <ion-item>
-                <ion-label><ion-icon name="people"></ion-icon></ion-label>
-                <ion-input placeholder="จำนวนที่นั่ง"
+                <ion-label><ion-icon name="call"></ion-icon></ion-label>
+                <ion-input placeholder="เบอร์โทรศัพท์"
                             formControlName="tel" 
                             [(ngModel)]="technologytel"
-                            type="number" text-right></ion-input>
+                            type="number"></ion-input>
               </ion-item>
-            </ion-col>
-                  </ion-row>
-              </ion-grid>
             
+            </div>
+
               
                
                
             </ion-list>
              
-                  <button
-                     ion-button
-                     
-                     text-center
-                     block
-                     >ขอร่วมเดินทาง</button>
+                  <button ion-button block color="secondary">บันทึก</button>
                
   </form>
-    
+-->
     </ion-content>
     
    

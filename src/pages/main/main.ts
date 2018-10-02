@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Http,Headers, RequestOptions } from '@angular/http';
-import { IonicPage, NavController, NavParams,App  } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,App ,AlertController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { QueuePage } from '../queue/queue';
 import { HistoryPage } from '../history/history';
@@ -24,7 +24,7 @@ export class MainPage {
   public items : any = [];
   
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public app : App,public http   : Http) {
+  constructor(public alertCtrl:AlertController,public navCtrl: NavController, public navParams: NavParams,public app : App,public http   : Http) {
                           const data = JSON.parse(localStorage.getItem('userData'));
                           this.userDetails = data.userData; 
   }
@@ -93,5 +93,29 @@ export class MainPage {
 profilePage(param)
   {
      this.navCtrl.push('ProfilePage', param);
+  }
+  home() {
+    let confirm = this.alertCtrl.create({
+      title: 'ออกจากระบบ',
+      message: 'คุณต้องการออกจากระบบหรือไม่?',
+      buttons: [
+        {
+          text: 'ยกเลิก',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'ตกลง',
+          handler: () => {
+          this.navCtrl.setRoot(HomePage);
+          let nav = this.app.getRootNav();
+          nav.setRoot(HomePage);
+
+          }
+        }
+      ]
+    });
+    confirm.present();
   }
 }

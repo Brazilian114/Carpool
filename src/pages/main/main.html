@@ -8,36 +8,39 @@
 
   <ion-navbar>
     <ion-title>main</ion-title>
+
+<ion-buttons end >
+    <button ion-button  (click)="home()">
+      
+  <ion-icon class="iconnn" name="log-out" ></ion-icon>
+      
+    </button>
+  </ion-buttons>
+
+
+
   </ion-navbar>
+
+  
 
 </ion-header>
 
 
 <ion-content padding id="grid">
-<ion-item ></ion-item>
+  
 
-<ion-item>
-  <ion-label fixed>Username</ion-label>
-  <ion-input type="text" value="{{userDetails.username}}"></ion-input>
-</ion-item>
-<ion-item>
-  <ion-label fixed>Username</ion-label>
-  <ion-input type="text" value="{{userDetails.email}}"></ion-input>
-</ion-item>
-<ion-item>
-    <ion-label fixed>Username</ion-label>
-    <ion-input type="text" value="{{userDetails.tel}}"></ion-input>
-  </ion-item>
-  <ion-item>
-      <ion-label fixed>Username</ion-label>
-      <ion-input type="text" value="{{userDetails.license}}"></ion-input>
-    </ion-item>
 
-  <ion-grid class="mygrid">
-      <ion-row>
+
+  <ion-grid >
+      <ion-row class="mygrid">
 
           <ion-col>
-            <button  ion-button block (click)="queuePage()">จองคิว</button>
+              
+            <button text-align="center"  ion-button block  (click)="queuePage()">
+                
+              จองคิว
+            </button>
+
           </ion-col>
          
           
@@ -55,8 +58,9 @@
     <ion-col class="cols">
         <div class="div"(click)="historyPage()" >
 
-        <ion-icon large name="contact" class="icon" item-start></ion-icon>
-        <h3>ข้อมูลส่วนตัว</h3>
+            <ion-icon large name="contact"  class="icon"></ion-icon>
+       
+        <h4 text-align="center">ประวัติการบริการ</h4>
       </div>
 
     </ion-col>
@@ -65,7 +69,7 @@
     
   </ion-grid>
 
-  <div padding id="list">
+  <!--<div padding id="list">
     <ion-row style="margin-top:10%;">
         <ion-col col-6 *ngFor="let item of items">
               
@@ -88,7 +92,7 @@
       
     </ion-row>
 </div>
-
+-->
 
 </ion-content>
 

@@ -7,7 +7,7 @@ import { Http,Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map'; 
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { HomePage } from '../home/home';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 /**
  * Generated class for the ContentPage page.
  *
@@ -162,7 +162,7 @@ export class ProfilePage {
     // for the record data
     updateEntry(email : string, username : string, license : string, province : string, tel : string) : void
     {
-       let headers 	: any		= new http ({ 'Content-Type': 'application/json' }),
+       let headers 	: any		= new Headers ({ 'Content-Type': 'application/json' }),
            options 	: any		= { "key" : "update", "email" : email, "username" : username, 
            "license" : license, "province" : province, "tel" : tel, "recordID" : this.recordID},
            url       : any      	= this.baseURI + "manage-data.php";
