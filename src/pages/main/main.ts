@@ -5,7 +5,10 @@ import { HomePage } from '../home/home';
 import { QueuePage } from '../queue/queue';
 import { HistoryPage } from '../history/history';
 import { ProfilePage } from '../profile/profile';
-import { TranslateService } from '@ngx-translate/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
+import {CanclePage} from '../cancle/cancle'
+import {TranslateService} from '@ngx-translate/core';
 /**
  * Generated class for the MainPage page.
  *
@@ -23,55 +26,35 @@ export class MainPage {
   public userDetails : any;
   posts: any;
   public items : any = [];
-  user = {
-    name: 'Arthur',
-    age: 42
-  };
-  constructor(private translate: TranslateService,public alertCtrl:AlertController,public navCtrl: NavController, public navParams: NavParams,public app : App,public http   : Http) {
+
+  constructor(private translate: TranslateService,public alertCtrl:AlertController ,public navCtrl: NavController, public navParams: NavParams,public app : App,public http   : Http) {
                           const data = JSON.parse(localStorage.getItem('userData'));
                           this.userDetails = data.userData; 
-                          translate.setDefaultLang('en');
+                          
+                          
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MainPage');
   }
-  ionViewWillEnter()
-  {
-    this.initializeItems();
-
-    this.http.get('http://localhost/DB123/retrieve-data.2.php').map(res => res.json()).subscribe(data => {
-      this.posts = data;
-     // console.log(this.posts);
-
-  });
-
-     this.load();
-    
-     
-  }
  
-  switchLanguage(language: string) {
-    this.translate.use(language);
+ 
+  switchEN() {
+    this.translate.use('en');
   }
+
+  switchTH() {
+    this.translate.use('th');
+  }
+  
 
   // Retrieve the JSON encoded data from the remote server
   // Using Angular's Http class and an Observable - then
   // assign this to the items array for rendering to the HTML template
-  load()
-  {
-     this.http.get('http://localhost/DB123/retrieve-data.2.php')
-     .map(res => res.json())
-     .subscribe(data => 
-     {
-        this.items = data;         
-     });
-  }
+ 
   
   
-  initializeItems() {
-    this.items =this.posts;
-  }
+  
   
 
   // Allow navigation to the AddTechnology page for creating a new entry
@@ -92,9 +75,14 @@ export class MainPage {
  }
   historyPage(){
   this.navCtrl.push(HistoryPage);
+}
+
+canclePage(){
+  this.navCtrl.push(CanclePage);
           
          
 }
+
 
 profilePage(param)
   {

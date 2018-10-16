@@ -4,10 +4,10 @@ import { LoginProvider } from '../../providers/login/login';
 import { Http,Headers, RequestOptions } from '@angular/http';
 //import{ AngularFireDatabase} from 'angularfire2/database';
 //import { AngularFireAuth } from 'angularfire2/auth';
-import 'rxjs/add/operator/map'; 
+//import 'rxjs/add/operator/map'; 
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { HomePage } from '../home/home';
-
+import {TranslateService} from '@ngx-translate/core';
 /**
  * Generated class for the ContentPage page.
  *
@@ -49,6 +49,7 @@ export class ProfilePage {
    
  
     constructor( //public angularfire :AngularFireDatabase,
+                private translate: TranslateService,
                  public alertCtrl   :AlertController,
                  public http        :Http,
                  public loadingCtrl :LoadingController,

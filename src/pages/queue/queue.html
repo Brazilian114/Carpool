@@ -1,7 +1,7 @@
 <ion-header>
 
     <ion-navbar>
-      <ion-title>เพิ่มเส้นทาง</ion-title>
+      <ion-title>{{'queue.booking' | translate}}</ion-title>
     </ion-navbar>
   
   </ion-header>
@@ -26,7 +26,7 @@
             <ion-label> 
               <ion-icon name="person"></ion-icon>
             </ion-label>
-            <ion-input   placeholder="ชื่อ-นามสกุล"
+            <ion-input   
                          value="{{userDetails.username}}"
                          type="text"
                          ></ion-input>
@@ -38,7 +38,7 @@
             <ion-label> <ion-icon name="card"></ion-icon></ion-label>
           <ion-input 
                     
-                     placeholder="หมายเลขทะเบียนรถ"
+                    
                      value="{{userDetails.license}}" ></ion-input>
         </ion-item>
         <div class="row2">
@@ -140,7 +140,7 @@
         </ion-item>
 
         <ion-item >
-            <ion-label>เลือกการบริการ</ion-label>
+            <ion-label>{{'queue.service' | translate}}</ion-label>
             <ion-select  multiple="true" submitText="Okay" cancelText="Cancle"
                         [(ngModel)]="userPostData.booking_service_id">
 
@@ -149,23 +149,23 @@
             </ion-select>
           </ion-item>
           <ion-item>
-              <ion-label>เลือกช่วงเวลา</ion-label>
+              <ion-label>{{'queue.time' | translate}}</ion-label>
               <ion-select  
                          submitText="Okay" cancelText="Cancle"
                          [(ngModel)]="userPostData.datetime">
 
-                <ion-option value="08.00.00">08.00.00</ion-option>
-                <ion-option value="09.00.00">09.00.00</ion-option>
-                <ion-option value="10.00.00">10.00.00</ion-option>
-                <ion-option value="11.00.00">11.00.00</ion-option>
-                <ion-option value="12.00.00">12.00.00</ion-option>
-                <ion-option value="13.00.00">13.00.00</ion-option>
-                <ion-option value="14.00.00">14.00.00</ion-option>
-                <ion-option value="15.00.00">15.00.00</ion-option>
-                <ion-option value="16.00.00">16.00.00</ion-option>
-                <ion-option value="17.00.00">17.00.00</ion-option>
-                <ion-option value="18.00.00">18.00.00</ion-option>
-                <ion-option value="19.00.00">19.00.00</ion-option>
+                
+                <ion-option value="09.00">09.00 น.</ion-option>
+                <ion-option value="10.00">10.00 น.</ion-option>
+                <ion-option value="11.00">11.00 น.</ion-option>
+                <ion-option value="12.00">12.00 น.</ion-option>
+                <ion-option value="13.00">13.00 น.</ion-option>
+                <ion-option value="14.00">14.00 น.</ion-option>
+                <ion-option value="15.00">15.00 น.</ion-option>
+                <ion-option value="16.00">16.00 น.</ion-option>
+                <ion-option value="17.00">17.00 น.</ion-option>
+                <ion-option value="18.00">18.00 น.</ion-option>
+                <ion-option value="19.00">19.00 น.</ion-option>
                 
                          
               </ion-select>
@@ -180,6 +180,6 @@
         
       </ion-list>        
        
-      <button ion-button block (click)="feedUpdate()">ยืนยัน</button>
+      <button ion-button block (click)="feedUpdate()">{{'queue.ok' | translate}}</button>
     
     </ion-content>

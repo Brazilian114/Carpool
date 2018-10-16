@@ -2,19 +2,33 @@
   
 </ion-header>
 
-<ion-content padding id="home">
-    <h1>
+<ion-content >
+   <ion-row>
+        <ion-col  (click)="switchTH()"  class="th">
+   
+            <img src="../assets/img/th.png" >
+   
+        </ion-col>
+        <ion-col (click)="switchEN()" class="en">
+          
+            <img src="../assets/img/eng.png">
+   
+        </ion-col>
+      </ion-row> 
+    
+    
+
+    <ion-list padding id="home">
+        <h1 text-center >
         CARCARE
     </h1>
-    <ion-list >
-        
           <ion-item>
-            <ion-label floating>Email</ion-label>
+            <ion-label stacked>{{'login.email' | translate}}</ion-label>
             <ion-input  type="text" name="username" [(ngModel)]="userData.username"></ion-input>
           </ion-item>
         
           <ion-item>
-            <ion-label floating>Password</ion-label>
+            <ion-label stacked>{{'login.password' | translate}}</ion-label>
             <ion-input  type="text" name="password"[(ngModel)]="userData.password"></ion-input>
           </ion-item>
         
@@ -22,9 +36,14 @@
         </ion-list>
         
         
-        <button ion-button block (click)="loginn()">Log in</button>
-        <a>ไม่มีบัญชีผู้ใช้งาน?<u (click)="click()">ลงทะเบียน</u></a>
-      
+        <button ion-button block (click)="loginn()">{{'login.login' | translate}}</button>
+        <div text-center>
+        <a>{{'login.regis' | translate}}<u (click)="click()">{{'login.regis2' | translate}}</u></a>
+        </div>
+
+       
+        
+       
     <!--  <ion-list >
           
           <ion-item  >

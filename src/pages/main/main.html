@@ -26,17 +26,23 @@
 </ion-header>
 
 
+
 <ion-content padding id="grid">
+  <div class="top">
+    <ion-row>
+        <ion-col  (click)="switchTH()"  class="th">
+   
+            <img src="../assets/img/th.png" >
+   
+        </ion-col>
+        <ion-col (click)="switchEN()" class="en">
+          
+            <img src="../assets/img/eng.png">
+   
+        </ion-col>
+      </ion-row>
+ </div>
   
-  <h1 translate>Title</h1>
-
-  <div>
-    {{ 'Intro' | translate:user }}
-  </div>
-
-  <button (click)="switchLanguage('en')">en</button>
-
-<button (click)="switchLanguage('fr')">fr</button>
 
   <ion-grid >
       <ion-row class="mygrid">
@@ -45,7 +51,7 @@
               
             <button text-align="center"  ion-button block  (click)="queuePage()">
                 
-              จองคิว
+                {{'main.queue' | translate}}
             </button>
 
           </ion-col>
@@ -58,7 +64,7 @@
         <div class="div"(click)="profilePage()">
 
         <ion-icon large name="contact"  class="icon"></ion-icon>
-        <h3>ข้อมูลส่วนตัว</h3>
+        <h3 text-center >{{'main.profile' | translate}}</h3>
       </div>
 
     </ion-col>
@@ -67,15 +73,26 @@
 
             <ion-icon large name="contact"  class="icon"></ion-icon>
        
-        <h4 text-align="center">ประวัติการบริการ</h4>
+        <h4 text-center>{{'main.history' | translate}}</h4>
       </div>
 
     </ion-col>
     </ion-row>
-    
+    <ion-row>
+
+        <ion-col col-6 class="cols">
+          <div class="div"(click)="canclePage()">
+  
+          <ion-icon large name="contact"  class="icon"></ion-icon>
+          <h3 text-center >{{'main.cancle' | translate}}</h3>
+        </div>
+  
+      </ion-col>
+
+    </ion-row>
     
   </ion-grid>
-
+  
   <!--<div padding id="list">
     <ion-row style="margin-top:10%;">
         <ion-col col-6 *ngFor="let item of items">

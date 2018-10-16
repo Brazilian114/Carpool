@@ -1,0 +1,38 @@
+<!--
+  Generated template for the CanclePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>cancle</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+     
+    <ion-item  *ngFor="let item of dataSet; let msgIndex = index" >
+      
+      <ion-icon name="trash" item-right  (click)="feedDelete(item.booking_id,msgIndex)"></ion-icon>
+    
+    <div >
+      <ion-item no-lines>
+    <ion-avatar item-start>
+      <img src="../assets/img/user.png">
+    </ion-avatar>
+    
+    <h2>{{userDetails.username}}</h2>
+    
+    <p>{{item.province}} - {{item.datetime}}</p>
+      </ion-item>
+   </div>
+  </ion-item>
+    </ion-list>
+
+</ion-content>

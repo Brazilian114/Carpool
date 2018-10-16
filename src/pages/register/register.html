@@ -11,7 +11,7 @@
 
      <ion-list>
   <ion-item>
-    <ion-label floating>Fullname</ion-label>
+    <ion-label floating>{{'register.fullname' | translate}}</ion-label>
       <ion-input
            [(ngModel)]="userData.username" 
             type="text" >
@@ -19,21 +19,21 @@
   </ion-item>
 
   <ion-item>
-    <ion-label floating>Email</ion-label>
+    <ion-label floating>{{'register.email' | translate}}</ion-label>
     <ion-input 
              [(ngModel)]="userData.email"
              type="text" >
     </ion-input>
   </ion-item>
   <ion-item>
-      <ion-label floating>tel</ion-label>
+      <ion-label floating>{{'register.phone' | translate}}</ion-label>
       <ion-input 
                [(ngModel)]="userData.tel"
                type="text" >
       </ion-input>
     </ion-item>
     <ion-item>
-        <ion-label floating>license</ion-label>
+        <ion-label floating>{{'register.license' | translate}}</ion-label>
         <ion-input 
                  [(ngModel)]="userData.license"
                  type="text" >
@@ -44,7 +44,7 @@
      
 
       <ion-item>
-        <ion-label>จังหวัดตามทะเบียนรถ</ion-label>
+        <ion-label>{{'register.province' | translate}}</ion-label>
         <ion-select 
         [(ngModel)]="userData.province" submitText="Okay" cancelText="Cancle">
           <ion-option value="กรุงเทพมหานคร">กรุงเทพมหานคร</ion-option>
@@ -130,7 +130,7 @@
       </ion-item>
 
       <ion-item>
-          <ion-label floating>password</ion-label>
+          <ion-label floating>{{'register.password' | translate}}</ion-label>
           <ion-input 
                    [(ngModel)]="userData.password"
                    type="text" >
@@ -150,8 +150,8 @@
 
 <br>
 <br>
-<button   ion-button block (click)="signup()">Submit</button>
-<button ion-button block (click)="home()" >back to login</button>
+<button   ion-button block (click)="signup()">{{'register.submit' | translate}}</button>
+<button ion-button block (click)="home()" >{{'register.back' | translate}}</button>
 
 
 

@@ -2,14 +2,14 @@ import { Component,ViewChild} from '@angular/core';
 import { NavController,ToastController,AlertController,ViewController,LoadingController} from 'ionic-angular';
 import { RegisterPage } from '../register/register';
 import { MainPage } from '../main/main';
-
+import {TranslateService} from '@ngx-translate/core';
 import { LoginProvider } from '../../providers/login/login';
 import { Storage } from '@ionic/storage';
 
 
 //import{ AngularFireDatabase} from 'angularfire2/database';
 
-import 'rxjs/add/operator/map'; 
+//import 'rxjs/add/operator/map'; 
 import { Http } from '@angular/http';
 
 
@@ -18,23 +18,37 @@ import { Http } from '@angular/http';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
+export class HomePage { 
 
+
+  
   resposeData : any;
   userData = {"username":"","password":""};
 
+  public items : any = [];
+  
 
-
- constructor(private loading : LoadingController,private viewCtrl: ViewController, public http:Http ,public navCtrl: NavController,private toastCtrl:ToastController,
+ constructor(private translate: TranslateService,private loading : LoadingController,private viewCtrl: ViewController, public http:Http ,public navCtrl: NavController,private toastCtrl:ToastController,
   private alert:AlertController,private auth:LoginProvider )  {
-
-                   
+   
+    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
   
   }
+
+  switchEN() {
+    this.translate.use('en');
+  }
+
+  switchTH() {
+    this.translate.use('th');
+  }
+  
+  
+  
   loginn(){
     if(this.userData.username && this.userData.password){
           this.auth.postData(this.userData, "login").then((result) =>{

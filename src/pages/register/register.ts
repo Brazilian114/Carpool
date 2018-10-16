@@ -4,7 +4,7 @@ import { IonicPage, NavController, NavParams,AlertController,ToastController } f
 import { LoginProvider } from '../../providers/login/login';
 import { HomePage } from '../home/home';
 import { Http,Headers, RequestOptions } from '@angular/http';
-
+import {TranslateService} from '@ngx-translate/core';
 /**
  * Generated class for the RegisterPage page.
  *
@@ -27,7 +27,8 @@ export class RegisterPage {
  
   public items : any = [];
 
-  constructor(public  navCtrl  : NavController,
+  constructor(private translate: TranslateService,
+              public  navCtrl  : NavController,
               public  NP       : NavParams,
               //public  fdb      : AngularFireDatabase,              
               public  alert    : AlertController,
@@ -43,6 +44,13 @@ export class RegisterPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
+  }
+  switchEN() {
+    this.translate.use('en');
+  }
+
+  switchTH() {
+    this.translate.use('th');
   }
  /*
   register(){

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { QueuePage } from './queue';
+import { CanclePage } from './cancle';
 
 @NgModule({
   declarations: [
-    QueuePage,
+    CanclePage,
   ],
   imports: [
-    IonicPageModule.forChild(QueuePage),
+    IonicPageModule.forChild(CanclePage),
   ],
 })
-export class QueuePageModule {}
+export class CanclePageModule {}

@@ -1,5 +1,5 @@
 page-main {
-
+   
     ion-icon{
         font-size: 30px;
             margin-top: 11px;
@@ -8,6 +8,17 @@ page-main {
 #grid{
     background-color:rgb(221, 230, 240);
         
+    .top{
+        img{
+            width: 30px;
+            height: 20px;
+            //border-radius: 50%;
+            box-shadow: 3px 3px 3px 1px  rgb(224, 224, 224);
+        }
+        ion-row {
+            margin-left: 78%;
+        }
+    }
     
     ion-icon{
         font-size: 45px;
@@ -18,7 +29,7 @@ page-main {
     }
 }
 ion-grid{
-   margin-top: 75%;;
+   margin-top: 10%;;
    padding-right:-20px;
    padding-bottom: 5px;
    padding-left: 10px;
@@ -32,7 +43,7 @@ ion-grid{
     border-radius: 10px;
     height: 150px;
     width: 100%;
-    margin-left: 1px;
+    margin-left: -1px;
     
     box-shadow: 5px 5px 5px  rgb(221, 221, 221);
     
@@ -56,8 +67,5 @@ ion-grid{
     box-shadow: 5px 5px 5px  rgb(221, 221, 221);
 }
 
-h3{
-    text-align: center;
-    margin-left: -5%;
-}
+
 }

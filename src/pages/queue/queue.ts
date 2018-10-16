@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,App ,ToastController } from 'ionic-angular';
 import { Http,Headers, RequestOptions } from '@angular/http';
 import { LoginProvider } from '../../providers/login/login';
+import {TranslateService} from '@ngx-translate/core';
+//import 'rxjs/add/operator/map'; 
 /**
  * Generated class for the QueuePage page.
  *
@@ -21,7 +23,7 @@ export class QueuePage {
 
   userPostData = {"user_id":"","token":"","username":"","tel":"",
   "license":"","province": "","booking_service_id": "","datetime": "","status": ""
-  };
+  }; 
   
   public resposeData : any;
 
@@ -36,15 +38,7 @@ export class QueuePage {
 
   ionViewWillEnter()
   {
-    this.initializeItems();
-
-    this.http.get('http://localhost/DB123/retrieve-data.php').map(res => res.json()).subscribe(data => {
-      this.posts = data;
-     // console.log(this.posts);
-
-  });
-
-     this.load();
+   
 }
 feedUpdate() {
   if (this.userPostData.username,this.userPostData.license,this.userPostData.province,this.userPostData.tel
