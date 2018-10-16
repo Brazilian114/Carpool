@@ -28,8 +28,15 @@
 
 <ion-content padding id="grid">
   
+  <h1 translate>Title</h1>
 
+  <div>
+    {{ 'Intro' | translate:user }}
+  </div>
 
+  <button (click)="switchLanguage('en')">en</button>
+
+<button (click)="switchLanguage('fr')">fr</button>
 
   <ion-grid >
       <ion-row class="mygrid">

@@ -5,6 +5,7 @@ import { HomePage } from '../home/home';
 import { QueuePage } from '../queue/queue';
 import { HistoryPage } from '../history/history';
 import { ProfilePage } from '../profile/profile';
+import { TranslateService } from '@ngx-translate/core';
 /**
  * Generated class for the MainPage page.
  *
@@ -22,11 +23,14 @@ export class MainPage {
   public userDetails : any;
   posts: any;
   public items : any = [];
-  
-
-  constructor(public alertCtrl:AlertController,public navCtrl: NavController, public navParams: NavParams,public app : App,public http   : Http) {
+  user = {
+    name: 'Arthur',
+    age: 42
+  };
+  constructor(private translate: TranslateService,public alertCtrl:AlertController,public navCtrl: NavController, public navParams: NavParams,public app : App,public http   : Http) {
                           const data = JSON.parse(localStorage.getItem('userData'));
                           this.userDetails = data.userData; 
+                          translate.setDefaultLang('en');
   }
 
   ionViewDidLoad() {
@@ -47,7 +51,9 @@ export class MainPage {
      
   }
  
-  
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
 
   // Retrieve the JSON encoded data from the remote server
   // Using Angular's Http class and an Observable - then
